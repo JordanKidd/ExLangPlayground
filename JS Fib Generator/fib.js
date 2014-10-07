@@ -1,8 +1,9 @@
 function fib(num) {
-    if(num == 1 || num == 0)
+    if(num <= 1) {
         return num;
-    else
-        return fib(num - 1) + fib(num - 2);
+    } else {
+        return (fib(num - 1) + fib(num - 2));
+    }
 }
 
 function popup() {
