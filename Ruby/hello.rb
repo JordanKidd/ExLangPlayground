@@ -1,5 +1,8 @@
 #Created by: Jordan Kidd, Dec 14
 
+#Global variables start with $
+$global_var = 2.17
+
 #Arguments to ruby vm
 arg1, arg2, arg3 = ARGV
 puts "\nDid you pass any arguments to this script?"
@@ -17,7 +20,7 @@ answer = 42
 hello = "hi"
 binary = true
 x, y, z = 1, 2, 3
-a = [1,2,3]
+a = [101, 202, 303]
 CONST = "I can't be changed. Capital letter starts consts."
 CONST = "test?" #WARNING!!
 puts "Their values: #{pi}, #{answer}, #{hello}, #{y}."
@@ -62,3 +65,32 @@ end
 functionOne()
 functionTwo("I'm two!")
 functionThree("I", "have", "stuff!")
+
+#LOOPS ----------------------------------------
+i = 0
+while i < 5 do
+    functionTwo(i)
+    i += 1
+end
+
+a.each do |num|
+    puts "from array 'a': #{num}"
+end
+
+
+#CLASSES -------------------------------------
+class Person
+    #This is a person class, which holds a person's name
+    @@class_var = "Available across ALL persons"
+    @name = ""
+    def initialize(name)
+        @name = name
+    end
+
+    def sayName()
+        puts "My name is #{@name}.\n"
+    end
+end
+
+jordan = Person.new("Jordan")
+jordan.sayName
